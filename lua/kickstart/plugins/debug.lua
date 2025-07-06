@@ -158,9 +158,15 @@ return {
         name = "Launch",
         type = "gdb",
         request = "launch",
+
         program = function()
           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
+
+        args = function()
+          return vim.fn.input('Arg: ') -- Single arg, use set args or something if I want more
+        end,
+
         cwd = "${workspaceFolder}",
         stopAtBeginningOfMainSubprogram = false,
       },

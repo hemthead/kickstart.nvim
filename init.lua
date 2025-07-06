@@ -933,7 +933,16 @@ require('lazy').setup({
   -- you can continue same window with `<space>sr` which resumes last telescope search
 
   -- NOTE: Here's where my plugins actually begin
-  'vimwiki/vimwiki' -- Trying this out over obsidian-nvim
+  'vimwiki/vimwiki', -- Trying this out over obsidian-nvim
+  {
+    'vyfor/cord.nvim', -- Friends use VSCode and Godot, it's only fair they get to see me as well
+    build = ':Cord update',
+    config = function() 
+      require 'cord'.setup {
+        editor = { tooltip = "Neovim" }, -- Cringe ahh default
+      }
+    end
+  }
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
