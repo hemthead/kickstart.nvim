@@ -714,6 +714,7 @@ require('lazy').setup({
         nix = { 'nixfmt' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
+        go = { 'gofmt' },
       },
     },
   },
@@ -974,6 +975,7 @@ vim.lsp.enable({
   'nil_ls',
   'pyright',
   'zls',
+  'gopls',
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
