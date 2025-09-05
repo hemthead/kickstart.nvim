@@ -177,6 +177,12 @@ vim.o.expandtab = true
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.g.vimwiki_list = {{
+  path = "~/wiki/",
+  syntax = "markdown",
+  ext = "md",
+}}
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -941,29 +947,33 @@ require('lazy').setup({
   -- you can continue same window with `<space>sr` which resumes last telescope search
 
   -- NOTE: Here's where my plugins actually begin
-  {
-    'nvim-neorg/neorg', -- Trying this out over vimwiki
-    version = "*",
-    config = function()
-      require 'neorg'.setup {
-        load = {
-          ["core.defaults"] = {},
-          ["core.concealer"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                wiki = "~/wiki",
-              },
-              default_workspace = "wiki",
-            },
-          },
-          ["core.summary"] = {},
-        },
-      }
-      vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 2
-    end
+
+  { -- vimwiki, my beloved
+    'vimwiki/vimwiki',
   },
+--  {
+--    'nvim-neorg/neorg', -- Trying this out over vimwiki
+--    version = "*",
+--    config = function()
+--      require 'neorg'.setup {
+--        load = {
+--          ["core.defaults"] = {},
+--          ["core.concealer"] = {},
+--          ["core.dirman"] = {
+--            config = {
+--              workspaces = {
+--                wiki = "~/wiki",
+--              },
+--              default_workspace = "wiki",
+--            },
+--          },
+--          ["core.summary"] = {},
+--        },
+--      }
+--      vim.wo.foldlevel = 99
+--      vim.wo.conceallevel = 2
+--    end
+--  },
 
   {
     'vyfor/cord.nvim', -- Friends use VSCode and Godot, it's only fair they get to see me as well
@@ -975,7 +985,7 @@ require('lazy').setup({
     end
   },
 
-  {
+  { -- really cool!
     '3rd/image.nvim',
     opts = {},
   },
