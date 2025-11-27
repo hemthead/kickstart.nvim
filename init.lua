@@ -722,7 +722,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         rust = { 'rustfmt' },
-        python = { 'ruff_organize_imports', 'ruff_fix', 'ruff_format' },
+        python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         zig = { 'zigfmt' },
         nix = { 'nixfmt' },
         c = { 'clang-format' },
@@ -1023,8 +1023,8 @@ vim.lsp.enable({
   'lua_ls',
   'clangd',
   'nil_ls',
-  'pyright',
   'zls',
+  'ruff',
   'gopls',
 })
 
