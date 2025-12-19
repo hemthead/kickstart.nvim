@@ -1024,7 +1024,8 @@ vim.lsp.enable({
   'clangd',
   'nil_ls',
   'zls',
-  'pyright',
+  'ty',
+  --'pyright',
   'gopls',
 })
 
