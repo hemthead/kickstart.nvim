@@ -722,7 +722,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         rust = { 'rustfmt' },
-        python = { 'ruff_organize_imports', 'ruff_fix', 'ruff_format' },
+        python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         zig = { 'zigfmt' },
         nix = { 'nixfmt' },
         c = { 'clang-format' },
@@ -910,6 +910,10 @@ require('lazy').setup({
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+
+      incremental_selection = {
+        enable = true,
+      },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -1019,8 +1023,9 @@ vim.lsp.enable({
   'lua_ls',
   'clangd',
   'nil_ls',
-  'pyright',
   'zls',
+  'ty',
+  --'pyright',
   'gopls',
   'arduino_language_server',
 })
