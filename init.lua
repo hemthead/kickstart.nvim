@@ -1022,6 +1022,7 @@ vim.lsp.enable({
   'pyright',
   'zls',
   'gopls',
+  'arduino_language_server',
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
