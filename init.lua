@@ -567,6 +567,10 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          map('gdf', vim.diagnostic.open_float, '[G]oto [D]iagnostic [F]loat')
+          map('gdp', vim.diagnostic.goto_prev, '[G]oto [D]iagnostic [F]loat')
+          map('gdn', vim.diagnostic.goto_next, '[G]oto [D]iagnostic [F]loat')
+
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
