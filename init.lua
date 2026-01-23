@@ -160,8 +160,11 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- I've been debating having this but I think it's a good idea
-vim.o.colorcolumn = "100"
-vim.o.textwidth=100
+vim.o.colorcolumn = "80"
+vim.o.textwidth=80
+-- text-wrapping is visually much harder to reason if you can't see why! 
+vim.o.conceallevel = 0
+vim.g.vimwiki_conceallevel = 0
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
@@ -177,11 +180,18 @@ vim.o.expandtab = true
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-vim.g.vimwiki_list = {{
-  path = "~/wiki/",
-  syntax = "markdown",
-  ext = "md",
-}}
+vim.g.vimwiki_list = {
+  {
+    path = "~/wiki/",
+    syntax = "markdown",
+    ext = "md",
+  },
+  {
+    path = "~/dev/hemthead-moment/content/",
+    syntax = "markdown",
+    ext = "md",
+  }
+}
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
