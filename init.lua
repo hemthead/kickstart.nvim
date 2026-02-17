@@ -775,7 +775,13 @@ require('lazy').setup({
           --   end,
           -- },
         },
-        opts = {},
+        opts = {
+          -- https://www.reddit.com/r/neovim/comments/12z0orb/comment/jhq2ymd/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+          -- Hopefully this'll stop my tab issues...
+          history = true,
+          region_check_events = "InsertEnter",
+          delete_check_events = "TextChanged,InsertLeave",
+        },
       },
       'folke/lazydev.nvim',
     },
